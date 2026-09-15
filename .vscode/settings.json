@@ -1,0 +1,21 @@
+{
+  // 关闭 VS Code 自带的通用格式化，统一交给 ESLint，避免两种规则打架
+  "editor.formatOnSave": false,
+
+  // 保存时执行 ESLint --fix（ESLint 官方推荐的自动修复方式）
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+
+  // 允许把 ESLint 当作 formatter 使用（Shift+Option+F 手动格式化时生效）
+  "eslint.format.enable": true,
+
+  // JS 文件：默认格式化器用 ESLint，并单独开启保存时格式化
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.formatOnSave": true
+  },
+
+  // 兜底：保存时裁掉行尾空格（上一轮那个空白行问题）
+  "files.trimTrailingWhitespace": true
+}
